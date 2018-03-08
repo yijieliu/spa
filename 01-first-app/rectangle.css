@@ -4,14 +4,24 @@
   font-size:1.1em;
 }
 
-input,label{
+input,label,span{
   margin:5px 0;
   font-size:1em;
   padding-left:5px;
 }
 
-.rectangle__calc{
+#rectangle__calc{
   width:70px;
   margin-left:63px;
+}
+span{
+  color:red;
+}
+
+#rectangle-width-validate,
+#rectangle-height-validate{
+  color:red;
+  margin-left:63px;
+  font-size:0.8em;
 }
 
