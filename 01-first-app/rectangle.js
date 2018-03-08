@@ -1,6 +1,6 @@
 $(function(){
   var $width=$('#rectangle-width');
-  var $height=$('#rectangle-hright');
+  var $height=$('#rectangle-height');
   var $calc=$('#rectangle-calc');
 
   $calc.click(function(){
@@ -17,11 +17,11 @@ $(function(){
     validate('#rectangle-height');
   });
   function perimeter(x,y){
-    var lenX=(x.split('.').length===2)?x.split('.')[1].length:0,
-        lenY=(y.split('.').length===2)?y.split('.')[1].length:0;
+    var lenX=(x.split('.').length===2)? x.split('.')[1].length:0,
+        lenY=(y.split('.').length===2)? y.split('.')[1].length:0;
 
-    var max=Math.max(lenX,lenY);
-    return (x*(10**max))*(y*(10**max))/(10**(2*max));
+    var max= Math.max(lenX,lenY);
+    return (x*(10 ** max))*(y*(10 ** max))/(10 ** (2*max));
   }
 
   function validate(field){
@@ -30,13 +30,13 @@ $(function(){
         label=$(field).attr('data-label');
 
     if($data.val()===''){
-      $message.html(label+'必须是数值');
+      $message.html(label+'不能为空！');
       $data.select();
       return;
     }
     
     if(!/^-?(0|[1-9]\d*)(\.\d*)?([eE][+-]?\d+)?$/.test($data.val())){
-      $message.html(label+'不能为空！');
+      $message.html(label+'必须是数值');
       $data.select();
       return;
     }
